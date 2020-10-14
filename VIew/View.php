@@ -66,7 +66,7 @@ Class View{
       $smarty->assign('message',$message);
       $smarty->assign('user',$user);
 
-      $smarty->display('templates/editar.tpl');
+      $smarty->display('templates/editProducto.tpl');
     }
 
     function renderEditarMarca($id,$marcas,$user=null,$message=""){
@@ -78,7 +78,7 @@ Class View{
       $smarty->assign('message',$message);
       $smarty->assign('user',$user);
 
-      $smarty->display('templates/editarMarca.tpl');
+      $smarty->display('templates/editMarca.tpl');
     }
 
     function renderMarcas($marcas,$user=null,$message=""){

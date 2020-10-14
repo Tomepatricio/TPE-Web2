@@ -1,36 +1,36 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-11 22:40:37
+/* Smarty version 3.1.34-dev-7, created on 2020-10-12 03:11:20
   from 'C:\xampp\htdocs\web2\TEST TPE\templates\productos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f836dc5dd4cb8_88757734',
+  'unifunc' => 'content_5f83ad383be191_94189291',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0d4ae090fb346657db838db79055a5d8ef0dd13f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TEST TPE\\templates\\productos.tpl',
-      1 => 1602448834,
+      1 => 1602465078,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:tablaProductos.tpl' => 1,
+    'file:formAddProducto.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f836dc5dd4cb8_88757734 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f83ad383be191_94189291 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\web2\\TESTTPE\\libs\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <h1 class="text-center">Productos</h1>
 
-<table class="table">
+<table class="table container">
     <thead class="thead-dark text-center">
         <tr>
             <th scope="col">ID</th>
@@ -60,7 +60,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
             </th>
-            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -77,7 +76,7 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
                 <td><a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 "><?php echo $_smarty_tpl->tpl_vars['producto']->value->nombre;?>
 </a></td>
-                <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['producto']->value->detalle,100);?>
+                <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['producto']->value->detalle,80);?>
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->presentacion;?>
 ml</td>
@@ -87,8 +86,8 @@ ml</td>
 </td>
                 <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
                     <td><a href="editar/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
-"><button type="button" class="btn btn-outline-warning">Editar</button></a></td>
-                    <td><a href="borrar/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
+"><button type="button" class="btn btn-outline-warning">Editar</button></a>
+                    <a href="borrar/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 "><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 <?php }?>
             </tr>
@@ -100,7 +99,7 @@ ml</td>
                 <td><a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 "><?php echo $_smarty_tpl->tpl_vars['producto']->value->nombre;?>
 </a></td>
-                <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['producto']->value->detalle,100);?>
+                <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['producto']->value->detalle,80);?>
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->presentacion;?>
 ml</td>
@@ -110,8 +109,8 @@ ml</td>
 </td>
                 <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
                     <td><a href="editar/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
-"><button type="button" class="btn btn-outline-warning">Editar</button></a></td>
-                    <td><a href="borrar/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
+"><button type="button" class="btn btn-outline-warning">Editar</button></a>
+                    <a href="borrar/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 "><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 <?php }?>
             </tr>
@@ -124,7 +123,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </table>
 
 <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
-    <?php $_smarty_tpl->_subTemplateRender("file:tablaProductos.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender("file:formAddProducto.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

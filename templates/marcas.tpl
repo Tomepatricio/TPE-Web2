@@ -1,6 +1,8 @@
 {include file="header.tpl"}
 
-<table class="table">
+<h1 class="text-center">Marcas</h1>
+
+<table class="table container">
     <thead class="thead-dark text-center">
         <tr>
             <th scope="col">ID</th>
@@ -19,8 +21,8 @@
                 <td>{$marca->origen}</td>
                 <td>{$marca->puntaje}</td>
                 {if $user}
-                    <td><a href="marcaseditar/{$marca->id_marca}"><button type="button" class="btn btn-outline-warning">Editar</button></a></td>
-                    <td><a href="marcasborrar/{$marca->id_marca}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
+                    <td><a href="marcaseditar/{$marca->id_marca}"><button type="button" class="btn btn-outline-warning">Editar</button></a>
+                    <a href="marcasborrar/{$marca->id_marca}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 {/if}
             </tr>
         {/foreach}
@@ -28,7 +30,7 @@
 </table>
 
 {if $user}
-    {include file="tablaMarcas.tpl"}
+    {include file="formAddMarca.tpl"}
 {/if}
 
 {include file="footer.tpl"}

@@ -2,7 +2,7 @@
 
 <h1 class="text-center">Productos</h1>
 
-<table class="table">
+<table class="table container">
     <thead class="thead-dark text-center">
         <tr>
             <th scope="col">ID</th>
@@ -23,7 +23,6 @@
                 </div>
             </div>
             </th>
-            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -32,13 +31,13 @@
             <tr class="text-center">
                 <th scope="row">{$producto->id}</th>
                 <td><a href="producto/{$producto->id}">{$producto->nombre}</a></td>
-                <td>{$producto->detalle|truncate:100}</td>
+                <td>{$producto->detalle|truncate:80}</td>
                 <td>{$producto->presentacion}ml</td>
                 <td>${$producto->precio}</td>
                 <td>{$producto->nombreMarca}</td>
                 {if $user}
-                    <td><a href="editar/{$producto->id}"><button type="button" class="btn btn-outline-warning">Editar</button></a></td>
-                    <td><a href="borrar/{$producto->id}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
+                    <td><a href="editar/{$producto->id}"><button type="button" class="btn btn-outline-warning">Editar</button></a>
+                    <a href="borrar/{$producto->id}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 {/if}
             </tr>
         {else}
@@ -46,13 +45,13 @@
             <tr class="text-center">
                 <th scope="row">{$producto->id}</th>
                 <td><a href="producto/{$producto->id}">{$producto->nombre}</a></td>
-                <td>{$producto->detalle|truncate:100}</td>
+                <td>{$producto->detalle|truncate:80}</td>
                 <td>{$producto->presentacion}ml</td>
                 <td>${$producto->precio}</td>
                 <td>{$producto->nombreMarca}</td>
                 {if $user}
-                    <td><a href="editar/{$producto->id}"><button type="button" class="btn btn-outline-warning">Editar</button></a></td>
-                    <td><a href="borrar/{$producto->id}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
+                    <td><a href="editar/{$producto->id}"><button type="button" class="btn btn-outline-warning">Editar</button></a>
+                    <a href="borrar/{$producto->id}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 {/if}
             </tr>
         {/if}
@@ -62,7 +61,7 @@
 </table>
 
 {if $user}
-    {include file="tablaProductos.tpl"}
+    {include file="formAddProducto.tpl"}
 {/if}
 
 {include file="footer.tpl"}
