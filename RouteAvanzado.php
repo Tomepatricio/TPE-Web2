@@ -11,12 +11,12 @@
     $r = new Router();
 
     // rutas
-    $r->addRoute("servicios", "GET", "Controller", "showServicios");
-    $r->addRoute("galeria", "GET", "Controller", "showGaleria");
-    $r->addRoute("productos", "GET", "Controller", "showProductos");
-    $r->addRoute("marcas", "GET", "Controller", "showMarcas");
-    $r->addRoute("marcas/:id", "GET", "Controller", "showProductos");
-    $r->addRoute("producto/:id", "GET", "Controller", "showDescripcionProducto");
+    $r->addRoute("servicios", "GET", "showController", "showServicios");
+    $r->addRoute("galeria", "GET", "showController", "showGaleria");
+    $r->addRoute("productos", "GET", "showController", "showProductos");
+    $r->addRoute("marcas", "GET", "showController", "showMarcas");
+    $r->addRoute("marcas/:id", "GET", "showController", "showProductos");
+    $r->addRoute("producto/:id", "GET", "showController", "showDescripcionProducto");
 
     $r->addRoute("insertar", "POST", "ComandController", "insertarProducto");
     $r->addRoute("editar/:id", "GET", "ComandController", "editarProductos");
