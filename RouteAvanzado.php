@@ -1,7 +1,7 @@
 
 <?php
     require_once 'RouterClass.php';
-    require_once 'Controller/Controller.php';
+    require_once 'Controller/showController.php';
     require_once 'Controller/ComandController.php';
     require_once 'Controller/UserController.php';
 
@@ -32,7 +32,7 @@
 
     
     //Ruta por defecto.
-    $r->setDefaultRoute("Controller", "goHome");
+    $r->setDefaultRoute("showController", "goHome");
 
     //Advance
     //$r->addRoute("autocompletar", "GET", "NewController", "AutoCompletar");

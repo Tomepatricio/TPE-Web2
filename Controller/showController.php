@@ -6,7 +6,7 @@ require_once './Model/ModelMarca.php';
 require_once 'UserController.php';
 
 
-Class Controller {//cambiar nombre al controller
+Class showController {//cambiar nombre al controller
 
     private $view;
     private $modelProducto;
