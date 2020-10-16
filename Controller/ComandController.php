@@ -73,7 +73,7 @@ Class ComandController {
     function editarYGuardarMarcas(){
         $userlog=$this->user->checkLog();
         if ($userlog != false){
-            $this->model->editarMarcaDB($_POST['idMarca'],$_POST['nombreMarca'],$_POST['descripcionMarca'],$_POST['origenMarca'],$_POST['puntajeMarca']);
+            $this->modelMarca->editarMarcaDB($_POST['idMarca'],$_POST['nombreMarca'],$_POST['descripcionMarca'],$_POST['origenMarca'],$_POST['puntajeMarca']);
             $marcas=$this->modelMarca->getMarcaDB();
         }
         $this->view->showMarcasLocation();
@@ -82,7 +82,7 @@ Class ComandController {
     function editarYGuardarProductos(){//Guarda en Base en datos
         $userlog=$this->user->checkLog();
         if ($userlog!=false) {
-            $this->model->editarProductosDB($_POST['idProducto'],$_POST['nombreProducto'],$_POST['detalleProducto'],$_POST['presentacionProducto'],$_POST['precioProducto'],$_POST['marcaProducto']);
+            $this->modelProducto->editarProductosDB($_POST['idProducto'],$_POST['nombreProducto'],$_POST['detalleProducto'],$_POST['presentacionProducto'],$_POST['precioProducto'],$_POST['marcaProducto']);
             $productos=$this->modelProducto->getProductosDB();
         }
         $this->view->showProductosLocation();

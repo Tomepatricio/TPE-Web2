@@ -15,7 +15,7 @@ Class ModelMarca{
     }
     
     function agregarMarcaDB($nombre,$descripcion,$origen,$puntaje){
-        $sentencia = $this->db->prepare("INSERT INTO marca(nombre, descripcion, origen, puntaje) VALUES(?,?,?,?)");
+        $sentencia = $this->db->prepare("INSERT INTO marca(nombreMarca, descripcion, origen, puntaje) VALUES(?,?,?,?)");
         $sentencia->execute(array($nombre,$descripcion,$origen,$puntaje));
     }
     
@@ -25,14 +25,8 @@ Class ModelMarca{
     }
 
     function editarMarcaDB($id,$nombre,$descripcion,$origen,$puntaje){
-        $sentencia = $this->db->prepare("UPDATE marca SET nombre=?, descripcion=?, origen=?, puntaje=? WHERE id_marca=?");
+        $sentencia = $this->db->prepare("UPDATE marca SET nombreMarca=?, descripcion=?, origen=?, puntaje=? WHERE id_marca=?");
         $sentencia->execute(array($nombre,$descripcion,$origen,$puntaje,$id));
-    }
-
-    function verificarUserBD($user){
-        $sentencia = $this->db->prepare("SELECT * FROM user WHERE username=?");
-        $sentencia->execute(array($user));
-        return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
 }

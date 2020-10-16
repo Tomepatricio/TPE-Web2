@@ -20,10 +20,10 @@
     <input type="number" class="form-control" name="precioProducto" value="{$producto->precio}">
     </div>
     <div class="form-group">
-    <small class="form-text text-white">Marca del Producto</small>
+    <small class="form-text text-muted">Marca del Producto</small>
     <select name="marcaProducto">
-        {foreach from=$marcas item=marca key=key name=name}
-            <option name="marcaProducto" value="{$producto->nombreMarca}"</option>
+        {foreach from=$marcas item=marca}
+            <option name="marcaProducto" value="{$marca->id_marca}">{$marca->nombreMarca}</option>
         {/foreach}
     </select>
     </div>

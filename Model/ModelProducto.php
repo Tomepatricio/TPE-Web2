@@ -29,10 +29,4 @@ Class ModelProducto{
         $sentencia->execute(array($nombre,$detalle,$presentacion,$precio,$id_marca,$id));
     }
 
-    function verificarUserBD($user){
-        $sentencia = $this->db->prepare("SELECT * FROM user WHERE username=?");
-        $sentencia->execute(array($user));
-        return $sentencia->fetch(PDO::FETCH_OBJ);
-    }
-
 }
