@@ -66,4 +66,10 @@ Class showController {//cambiar nombre al controller
         $this->view->renderGaleria($userlog);
     }
 
+    function showRegistro(){
+        $userlog=$this->user->checkLog();
+        $users=$this->user->getUsers();
+        $this->view->renderUsers($users,$userlog);
+    }
+
 }

@@ -102,6 +102,17 @@ Class View{
       $smarty->display('templates/galeria.tpl');
     }
 
+    function renderUsers($users=null,$user=null,$message=""){
+      $smarty=new Smarty();
+
+      $smarty->assign('titulo',$this->titulo);
+      $smarty->assign('message',$message);
+      $smarty->assign('user',$user);
+      $smarty->assign('users',$users);
+
+      $smarty->display('templates/registro.tpl');
+  }
+
     function ShowProductosLocation(){
       header("Location: ".BASE_URL."productos");
     }

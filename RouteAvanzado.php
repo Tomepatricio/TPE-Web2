@@ -17,6 +17,7 @@
     $r->addRoute("marcas", "GET", "showController", "showMarcas");
     $r->addRoute("marcas/:id", "GET", "showController", "showProductos");
     $r->addRoute("producto/:id", "GET", "showController", "showDescripcionProducto");
+    $r->addRoute("registro", "GET", "showController", "showRegistro");
 
     $r->addRoute("insertar", "POST", "ComandController", "insertarProducto");
     $r->addRoute("editar/:id", "GET", "ComandController", "editarProductos");
@@ -29,6 +30,7 @@
 
     $r->addRoute("login", "POST", "UserController", "loginUser");
     $r->addRoute("logout", "GET", "UserController", "logout");
+    $r->addRoute("registro/addUser","POST", "UserController", "insertarUser");
 
     
     //Ruta por defecto.

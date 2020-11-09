@@ -39,7 +39,7 @@
                 {if $user}       
                     <div class="col">
                         <div class="row">
-                            <h3 class="text-white">{$user}</h3>
+                            <h3 class="text-white">{$user->username}</h3>
                             <a href="logout"><small>Logout</small></a>
                         </div>
                     </div>
@@ -50,14 +50,17 @@
                             <div class="form-group mb-2">
                             <div class="admin"> 
                                 <label for="user" class="sr-only">Usuario</label>
-                                <input type="text" class="form-control" name="user" id="user" placeholder='"Usuario"'>
+                                <input type="text" class="form-control" name="username" id="user" placeholder='"Usuario"'>
                             </div>
                             </div>
                             <div class="form-group mx-sm-3 mb-2 admin">
                                 <label for="password" class="sr-only">Contraseña</label>
                                 <input type="password" class="form-control" name="password"id="password" placeholder='"Contraseña"'>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-2">Confirmar</button>
+                            <div class="btn-group-vertical">
+                                <button type="submit" class="btn-sm btn-success mb-2">Confirmar</button>
+                                <a class="text-white text-center" href="registro"><span class="badge badge-warning">Registro</span></a>
+                            </div>
                         </form>
                     </div>    
                 {/if}
@@ -69,4 +72,5 @@
                 <a class="btn btn-outline-success font-weight-bold" href="galeria">GALERIA</a>
                 <a class="btn btn-outline-success font-weight-bold" href="productos">PRODUCTOS</a>
             </nav>
+        
         </header>

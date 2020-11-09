@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-11 21:13:57
+/* Smarty version 3.1.34-dev-7, created on 2020-11-04 21:02:18
   from 'C:\xampp\htdocs\web2\TPE git\TPE-Web2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f835975111d32_54685617',
+  'unifunc' => 'content_5fa308caa7deb0_49458241',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c14cdc1a3cfc948ea4eec6132d1d04e37912c245' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE git\\TPE-Web2\\templates\\header.tpl',
-      1 => 1602437549,
+      1 => 1604520134,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f835975111d32_54685617 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa308caa7deb0_49458241 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +70,7 @@ function content_5f835975111d32_54685617 (Smarty_Internal_Template $_smarty_tpl)
                 <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>       
                     <div class="col">
                         <div class="row">
-                            <h3 class="text-white"><?php echo $_smarty_tpl->tpl_vars['user']->value;?>
+                            <h3 class="text-white"><?php echo $_smarty_tpl->tpl_vars['user']->value->username;?>
 </h3>
                             <a href="logout"><small>Logout</small></a>
                         </div>
@@ -83,14 +83,17 @@ function content_5f835975111d32_54685617 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="form-group mb-2">
                             <div class="admin"> 
                                 <label for="user" class="sr-only">Usuario</label>
-                                <input type="text" class="form-control" name="user" id="user" placeholder='"Usuario"'>
+                                <input type="text" class="form-control" name="username" id="user" placeholder='"Usuario"'>
                             </div>
                             </div>
                             <div class="form-group mx-sm-3 mb-2 admin">
                                 <label for="password" class="sr-only">Contraseña</label>
                                 <input type="password" class="form-control" name="password"id="password" placeholder='"Contraseña"'>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-2">Confirmar</button>
+                            <div class="btn-group-vertical">
+                                <button type="submit" class="btn-sm btn-success mb-2">Confirmar</button>
+                                <a class="text-white text-center" href="registro"><span class="badge badge-warning">Registro</span></a>
+                            </div>
                         </form>
                     </div>    
                 <?php }?>
@@ -102,6 +105,7 @@ function content_5f835975111d32_54685617 (Smarty_Internal_Template $_smarty_tpl)
                 <a class="btn btn-outline-success font-weight-bold" href="galeria">GALERIA</a>
                 <a class="btn btn-outline-success font-weight-bold" href="productos">PRODUCTOS</a>
             </nav>
+        
         </header>
 <?php }
 }

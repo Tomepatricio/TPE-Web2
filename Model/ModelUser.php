@@ -14,4 +14,14 @@ Class ModelUser{
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
+    function getUsersDB(){
+        $sentencia= $this->db->prepare("SELECT * FROM user");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    function insertarUserDB($username,$pass){
+        $sentencia=$this->db->prepare('INSERT INTO user(username,password) VALUES(?,?)');
+        $sentencia->execute(array($username,$pass));
+    }
 }
