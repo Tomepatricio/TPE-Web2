@@ -14,6 +14,12 @@ Class ModelProducto{
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
+    function getProductoByIdDB($id){
+        $sentencia = $this->db->prepare("SELECT producto.id, producto.nombre, producto.detalle, producto.presentacion, producto.precio, producto.id_marca, marca.nombreMarca FROM producto INNER JOIN marca ON producto.id_marca=marca.id_marca WHERE id=?");
+        $sentencia->execute(array($id));
+        return $sentencia->fetch(PDO::FETCH_OBJ);
+    }
+
     function agregarProductoDB($nombre,$detalle,$presentacion,$precio,$id_marca){
         $sentencia = $this->db->prepare("INSERT INTO producto(nombre, detalle, presentacion, precio, id_marca) VALUES(?,?,?,?,?)");
         $sentencia->execute(array($nombre,$detalle,$presentacion,$precio,$id_marca));

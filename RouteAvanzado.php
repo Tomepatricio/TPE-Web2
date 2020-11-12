@@ -1,4 +1,3 @@
-
 <?php
     require_once 'RouterClass.php';
     require_once 'Controller/showController.php';
@@ -31,6 +30,7 @@
     $r->addRoute("login", "POST", "UserController", "loginUser");
     $r->addRoute("logout", "GET", "UserController", "logout");
     $r->addRoute("registro/addUser","POST", "UserController", "insertarUser");
+    $r->addRoute("registroUpdate","POST", "UserController", "updateUser");
 
     
     //Ruta por defecto.

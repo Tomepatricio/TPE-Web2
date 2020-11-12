@@ -5,7 +5,7 @@
   </div>
   <div class="form-group">
     <small class="form-text">Contraseña</small>
-    <input type="text" class="form-control" name="password" placeholder='"Ejemplo, 123456"'>
+    <input type="password" class="form-control" name="password" placeholder='"Ejemplo, 123456"'>
   </div>
   <button type="submit" class="btn btn-primary">Registrarse</button>
 </form>

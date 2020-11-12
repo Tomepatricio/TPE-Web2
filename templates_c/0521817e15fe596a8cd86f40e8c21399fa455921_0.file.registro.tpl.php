@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-10 00:00:16
-  from 'C:\xampp\htdocs\web2\TPE git\TPE-Web2\templates\registro.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-12 23:12:41
+  from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\registro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa9ca004e6b28_15454543',
+  'unifunc' => 'content_5fadb359415151_97455534',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a861a228493289087fd990154c1c6b3c83a1eae9' => 
+    '0521817e15fe596a8cd86f40e8c21399fa455921' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\TPE git\\TPE-Web2\\templates\\registro.tpl',
-      1 => 1604632732,
+      0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\registro.tpl',
+      1 => 1605219159,
       2 => 'file',
     ),
   ),
@@ -23,9 +23,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fa9ca004e6b28_15454543 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fadb359415151_97455534 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
+<?php if ($_smarty_tpl->tpl_vars['message']->value != '') {?><!--ver esto-->
+    <div class="container pd-10">
+        <div class="p-3 mb-2 bg-info text-white"><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
+</div>
+    </div>
+<?php }?>
 
 <?php if ($_smarty_tpl->tpl_vars['user']->value != null) {?>
     <?php if ($_smarty_tpl->tpl_vars['user']->value->admin == 1) {?>
@@ -34,7 +41,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Nombre</th>
+                        <th class="text-center" scope="col">Usuario</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,9 +52,10 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['u']->value) {
 $_smarty_tpl->tpl_vars['u']->do_else = false;
 ?>
                         <tr>
-                            <td><?php echo $_smarty_tpl->tpl_vars['u']->value->username;?>
+                            <td class="text-center"><?php echo $_smarty_tpl->tpl_vars['u']->value->username;?>
 </td>
-                            <td>Es administrador:<input type="checkbox" <?php if ($_smarty_tpl->tpl_vars['u']->value->admin == 1) {?>checked="checked"<?php }?>></td>
+                            <td class="text-center">Es administrador:<input type="checkbox" <?php if ($_smarty_tpl->tpl_vars['u']->value->admin == 1) {?>checked="checked"<?php }?>></td>
+                            <td class="text-center"><a href="registro/eliminar"><button type="button" class="btn btn-outline-danger">Eliminar</button></a></td>
                         </tr>
                     <?php
 }
@@ -61,13 +69,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 } else { ?>
     <?php $_smarty_tpl->_subTemplateRender("file:tablaRegistro.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }?>
-
-<?php if ($_smarty_tpl->tpl_vars['message']->value != '') {?><!--ver esto-->
-    <div class="container pd-10">
-        <div class="p-3 mb-2 bg-info text-white"><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
-</div>
-    </div>
-<?php }?>
     
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
