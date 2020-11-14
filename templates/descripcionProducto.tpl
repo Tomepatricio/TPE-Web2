@@ -18,7 +18,20 @@
   </div>
 </div>
 
+<h3 class="">Comentarios</h3><!--Ver esto, hacer la API-->
+
+<form class="container" action="comment" method="POST">
+    <textarea name="comment" id="" cols="50" rows="5" placeholder="Dejanos tu comentario..."></textarea>
+    <input type="hidden" name="idProducto" value="{$producto->id}">
+    <button type="submit">Enviar</button>
+</form>
+
 {if $user}
+    {include file="comment.tpl"}
+{/if}
+
+
+{if $user&&$user->admin==1}
     {include file="formEditProducto.tpl"}
 {/if}
 

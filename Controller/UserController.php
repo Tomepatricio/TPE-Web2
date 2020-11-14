@@ -66,15 +66,31 @@ Class UserController {
         $username=$_POST['user'];
         $pass=$_POST['password'];
         if (isset($username)&&!empty($username)) {
-            if (isset($pass)&&!empy($pass)) {
+            if (isset($pass)&&!empty($pass)) {
                 $encriptedPass=password_hash($pass, PASSWORD_DEFAULT);
                 $this->modelUser->insertarUserDB($username,$encriptedPass);
+                $this->view->renderUsers(null,null,"Su registro se completo Correctamente");
             }else{
                 $this->view->renderUsers(null,null,"Ingrese contraseña");
             }
         }else{
             $this->view->renderUsers(null,null,"Ingrese Usuario");
         }
-        $this->view->renderUsers(null,null,"Su registro se completo Correctamente");
+    }
+
+    function updateUser($params){
+        $username=$params[':username'];
+        $user=$this->modelUser->getUserByUsernameDB ($username);
+        $admin=!$user->admin;
+        if($user!=null){
+            $this->modelUser->setAdminDB($username,$admin);
+        }
+        $this->view->showRegistroLocation();
+    }
+
+    function deleteUser($params){
+        $username=$params[':username'];
+        $this->modelUser->deleteUserDB($username);
+        $this->view->showRegistroLocation();
     }
 }

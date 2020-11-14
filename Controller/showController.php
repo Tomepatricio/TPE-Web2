@@ -39,13 +39,15 @@ Class showController {//cambiar nombre al controller
 
     function showDescripcionProducto($params){
         $userlog=$this->user->checkLog();
-        $productos=$this->modelProducto->getProductosDB();
+        /*$productos=$this->modelProducto->getProductosDB();
         $producto=$params[':id'];
         foreach ($productos as $prod) {
             if ($prod->id==$producto){
                 $producto=$prod;
             }
-        }
+        }*/
+        $id=$params[':id'];
+        $producto=$this->modelProducto->getProductoByIdDB($id);
         $marcas=$this->modelMarca->getMarcaDB();
         $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
     }

@@ -1,4 +1,3 @@
-
 <?php
     require_once 'RouterClass.php';
     require_once 'Controller/showController.php';
@@ -18,7 +17,7 @@
     $r->addRoute("marcas/:id", "GET", "showController", "showProductos");
     $r->addRoute("producto/:id", "GET", "showController", "showDescripcionProducto");
     $r->addRoute("registro", "GET", "showController", "showRegistro");
-
+    
     $r->addRoute("insertar", "POST", "ComandController", "insertarProducto");
     $r->addRoute("editar/:id", "GET", "ComandController", "editarProductos");
     $r->addRoute("borrar/:id", "GET", "ComandController", "borrarProducto");
@@ -27,10 +26,12 @@
     $r->addRoute("marcaseditar/:id", "GET", "ComandController", "editarMarca");
     $r->addRoute("marcasborrar/:id", "GET", "ComandController", "borrarMarca");
     $r->addRoute("marcaseditar", "POST", "ComandController", "editarYGuardarMarcas");
-
+    
     $r->addRoute("login", "POST", "UserController", "loginUser");
     $r->addRoute("logout", "GET", "UserController", "logout");
     $r->addRoute("registro/addUser","POST", "UserController", "insertarUser");
+    $r->addRoute("update/:username","GET", "UserController", "updateUser");
+    $r->addRoute("registroEliminar/:username","GET", "UserController", "deleteUser");
 
     
     //Ruta por defecto.

@@ -20,7 +20,7 @@
                 <td>{$marca->descripcion|truncate:100}</td>
                 <td>{$marca->origen}</td>
                 <td>{$marca->puntaje}</td>
-                {if $user}
+                {if $user&&$user->admin==1}
                     <td><a href="marcaseditar/{$marca->id_marca}"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                     <a href="marcasborrar/{$marca->id_marca}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 {/if}
@@ -29,7 +29,7 @@
     </tbody>
 </table>
 
-{if $user}
+{if $user&&$user->admin==1}
     {include file="formAddMarca.tpl"}
 {/if}
 
