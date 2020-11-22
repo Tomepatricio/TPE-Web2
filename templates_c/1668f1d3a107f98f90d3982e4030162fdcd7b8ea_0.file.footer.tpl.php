@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-11 19:18:49
+/* Smarty version 3.1.34-dev-7, created on 2020-11-22 02:58:31
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fac2b091e4cd7_72249503',
+  'unifunc' => 'content_5fb9c5c716c335_98809230',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1668f1d3a107f98f90d3982e4030162fdcd7b8ea' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\footer.tpl',
-      1 => 1605118594,
+      1 => 1606010163,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fac2b091e4cd7_72249503 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb9c5c716c335_98809230 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <aside class="position-sticky text-center p-3 mb-2 bg-success">
         <p class="font-weight-bold">Podes Acceder a nuestas redes sociales:</p>
         <a href="https://facebook.com/profile.php?id=100017002745588" target="blank"><img src="images/facebook.jpg"></a>

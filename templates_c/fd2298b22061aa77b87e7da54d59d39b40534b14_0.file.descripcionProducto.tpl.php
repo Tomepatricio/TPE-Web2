@@ -1,30 +1,30 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-14 03:32:34
+/* Smarty version 3.1.34-dev-7, created on 2020-11-22 01:56:35
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\descripcionProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5faf41c28d3492_73902519',
+  'unifunc' => 'content_5fb9b7437e5d93_79049197',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fd2298b22061aa77b87e7da54d59d39b40534b14' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\descripcionProducto.tpl',
-      1 => 1605302055,
+      1 => 1606006583,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:comment.tpl' => 1,
+    'file:vue/comment.vue' => 1,
     'file:formEditProducto.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5faf41c28d3492_73902519 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb9b7437e5d93_79049197 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -53,7 +53,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
 <h3 class="">Comentarios</h3><!--Ver esto, hacer la API-->
 
-<form class="container" action="comment" method="POST">
+<form class="container" action="api/comment" method="POST">
     <textarea name="comment" id="" cols="50" rows="5" placeholder="Dejanos tu comentario..."></textarea>
     <input type="hidden" name="idProducto" value="<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 ">
@@ -61,7 +61,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 </form>
 
 <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
-    <?php $_smarty_tpl->_subTemplateRender("file:comment.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+  <?php $_smarty_tpl->_subTemplateRender("file:vue/comment.vue", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }?>
 
 

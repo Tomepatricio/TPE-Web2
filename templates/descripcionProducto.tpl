@@ -20,14 +20,14 @@
 
 <h3 class="">Comentarios</h3><!--Ver esto, hacer la API-->
 
-<form class="container" action="comment" method="POST">
+<form class="container" action="api/comment" method="POST">
     <textarea name="comment" id="" cols="50" rows="5" placeholder="Dejanos tu comentario..."></textarea>
     <input type="hidden" name="idProducto" value="{$producto->id}">
     <button type="submit">Enviar</button>
 </form>
 
 {if $user}
-    {include file="comment.tpl"}
+  {include file="vue/comment.vue"}
 {/if}
 
 

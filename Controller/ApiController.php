@@ -3,13 +3,17 @@
 require_once './Model/ModelProducto.php';
 require_once './View/APIView.php';
 require_once 'ApiAbstractController.php';
+require_once './Model/ModelComment.php';
+require_once './View/View.php';
 
 Class ApiController extends ApiAbstractController {
 
     function __construct() {
         parent::__construct();
         $this->model= new ModelProducto();
+        $this->modelComment= new ModelComment();
         $this->view = new APIView();
+        $this->viewShow = new View();
     }
 
     function getProductos($params=null){
@@ -69,8 +73,11 @@ Class ApiController extends ApiAbstractController {
 
     function sendComment(){
         $comment=$_POST['comment'];
-        $idProducto=$_POST['idPorducto'];
-        $this->model->sentCommentDB($comment,$idProducto);
-        $this->view->productosJSON();
+        $idProducto=$_POST['idProducto'];
+        //$body=$this->getData();
+        $this->modelComment->sendCommentDB($comment,$idProducto);   
+        $this->viewShow->showProductosLocation();
+        //$this->view->productosJSON($body);
     }
+
 }
