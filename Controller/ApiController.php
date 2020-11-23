@@ -80,4 +80,9 @@ Class ApiController extends ApiAbstractController {
         //$this->view->productosJSON($body);
     }
 
+    function getComment(){
+        $comments=$this->modelComment->getCommentsDB();
+        $this->view->productosJSON($comments);
+    }
+
 }

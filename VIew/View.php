@@ -124,4 +124,8 @@ Class View{
     function ShowRegistroLocation(){
       header("Location: ".BASE_URL."registro");
     }
+
+    function ShowProductosDescriptionLocation(){
+      header("Location: ".BASE_URL."productos/:id");
+    }
 }

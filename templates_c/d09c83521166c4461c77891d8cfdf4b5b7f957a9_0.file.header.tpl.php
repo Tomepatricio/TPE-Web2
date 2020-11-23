@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-22 02:58:31
+/* Smarty version 3.1.34-dev-7, created on 2020-11-23 20:10:25
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb9c5c711e135_34300011',
+  'unifunc' => 'content_5fbc0921a7b828_50875790',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd09c83521166c4461c77891d8cfdf4b5b7f957a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\header.tpl',
-      1 => 1606010302,
+      1 => 1606158621,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb9c5c711e135_34300011 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbc0921a7b828_50875790 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,10 +40,10 @@ function content_5fb9c5c711e135_34300011 (Smarty_Internal_Template $_smarty_tpl)
  src="js/servicios.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
+ src="js/commentAPI.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="js/commentAPI.js"><?php echo '</script'; ?>
+ src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
 >
     <style>
         /*body  {

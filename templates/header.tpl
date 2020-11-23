@@ -9,8 +9,8 @@
     <script src="js/captcha.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/servicios.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/commentAPI.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
         /*body  {
         background-image: url("images/gif.gif");

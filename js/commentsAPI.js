@@ -1,16 +1,14 @@
-"use strict";
+"use strict"
 
-document.addEventListener("DOMContentLoaded",()=>{
-    let data=getComment();
-    console.log(data);
-    die();
+document.addEventListener ("DOMContentLoaded",()=>{
+    getComment();
 });
 
 
-const comentarios= new Vue({
+let comentarios= new Vue({
     el:'#vue-comentarios',
     data: {
-        comments:[]
+        comments:['hola', 'chau','holafachitaquerido']
     }
 });
 
@@ -18,6 +16,7 @@ const comentarios= new Vue({
 function getComment(){
     fetch('api/comment')
     .then(response => response.json())
-    .then(comment => comentarios.comments = comment)
+    .then(comment => {
+            comentarios.comments = comment;})
     .catch(error=>console.log(error))
 }
