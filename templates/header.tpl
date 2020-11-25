@@ -9,13 +9,7 @@
     <script src="js/captcha.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/servicios.js"></script>
-    <script src="js/commentAPI.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
-        /*body  {
-        background-image: url("images/gif.gif");
-        background-size:100%;
-        }*/
         .carousel-inner img {
             max-width: 100%;
             max-height: 660px;
@@ -42,6 +36,7 @@
                     <div class="col">
                         <div class="row">
                             <h3 class="text-white">{$user->username}</h3>
+                            <input id="admin" type="hidden" value="{$user->admin}">
                             <div class="m-2">
                                 <a href="logout"><small>Logout</small></a>
                                 <a class="text-white text-center ml-2" href="registro"><span class="badge badge-warning">Administrar Usuarios</span></a>

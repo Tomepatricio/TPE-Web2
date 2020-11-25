@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-23 20:10:25
+/* Smarty version 3.1.34-dev-7, created on 2020-11-23 23:10:34
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fbc0921a7b828_50875790',
+  'unifunc' => 'content_5fbc335a992065_69944309',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd09c83521166c4461c77891d8cfdf4b5b7f957a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\header.tpl',
-      1 => 1606158621,
+      1 => 1606169432,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fbc0921a7b828_50875790 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbc335a992065_69944309 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,17 +39,7 @@ function content_5fbc0921a7b828_50875790 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="js/servicios.js"><?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
- src="js/commentAPI.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
->
     <style>
-        /*body  {
-        background-image: url("images/gif.gif");
-        background-size:100%;
-        }*/
         .carousel-inner img {
             max-width: 100%;
             max-height: 660px;
@@ -78,6 +68,8 @@ function content_5fbc0921a7b828_50875790 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="row">
                             <h3 class="text-white"><?php echo $_smarty_tpl->tpl_vars['user']->value->username;?>
 </h3>
+                            <input id="admin" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['user']->value->admin;?>
+">
                             <div class="m-2">
                                 <a href="logout"><small>Logout</small></a>
                                 <a class="text-white text-center ml-2" href="registro"><span class="badge badge-warning">Administrar Usuarios</span></a>

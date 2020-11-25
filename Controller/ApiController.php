@@ -74,15 +74,21 @@ Class ApiController extends ApiAbstractController {
     function sendComment(){
         $comment=$_POST['comment'];
         $idProducto=$_POST['idProducto'];
-        //$body=$this->getData();
-        $this->modelComment->sendCommentDB($comment,$idProducto);   
-        $this->viewShow->showProductosLocation();
-        //$this->view->productosJSON($body);
+        $valoracion=$_POST['valoracion'];
+        $this->modelComment->sendCommentDB($comment,$idProducto,$valoracion);
+        $this->viewShow->ShowProductosDescriptionLocation($idProducto);
     }
 
     function getComment(){
         $comments=$this->modelComment->getCommentsDB();
         $this->view->productosJSON($comments);
+    }
+
+    function deleteComment($params){
+        $commentId=$params[':id'];
+        $idProducto=$_GET['idProducto'];
+        $this->modelComment->deleteCommentDB($commentId);
+        $this->viewShow->ShowProductosDescriptionLocation($idProducto);
     }
 
 }
