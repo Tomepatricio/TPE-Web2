@@ -3,13 +3,24 @@
 require_once './Model/ModelProducto.php';
 require_once './View/APIView.php';
 require_once 'ApiAbstractController.php';
+<<<<<<< HEAD
+=======
+require_once './Model/ModelComment.php';
+require_once './View/View.php';
+>>>>>>> develop
 
 Class ApiController extends ApiAbstractController {
 
     function __construct() {
         parent::__construct();
         $this->model= new ModelProducto();
+<<<<<<< HEAD
         $this->view = new APIView();
+=======
+        $this->modelComment= new ModelComment();
+        $this->view = new APIView();
+        $this->viewShow = new View();
+>>>>>>> develop
     }
 
     function getProductos($params=null){
@@ -66,4 +77,31 @@ Class ApiController extends ApiAbstractController {
         }
         return false;
     }
+<<<<<<< HEAD
+=======
+
+    function sendComment(){
+        // $comment=$_POST['respuesta'];
+        // $idProducto=$_POST['id_producto'];
+        // $valoracion=$_POST['valoracion'];
+        $json=file_get_contents('php://input');
+        $data=json_decode($json,false);
+        $response=$this->modelComment->sendCommentDB($data->comentario,$data->id_producto,$data->valoracion);
+        if($response)
+            $this->view->productosJSON($data);
+    }
+
+    function getComment(){
+        $comments=$this->modelComment->getCommentsDB();
+        $this->view->productosJSON($comments);
+    }
+
+    function deleteComment($params){
+        $commentId=$params[':id'];
+        $idProducto=$_GET['idProducto'];
+        $this->modelComment->deleteCommentDB($commentId);
+        $this->viewShow->ShowProductosDescriptionLocation($idProducto);
+    }
+
+>>>>>>> develop
 }

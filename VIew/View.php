@@ -120,4 +120,12 @@ Class View{
     function ShowMarcasLocation(){
       header("Location: ".BASE_URL."marcas");
     }
+
+    function ShowRegistroLocation(){
+      header("Location: ".BASE_URL."registro");
+    }
+
+    function ShowProductosDescriptionLocation($idProducto){
+      header("Location: ".BASE_URL."producto/".$idProducto);
+    }
 }

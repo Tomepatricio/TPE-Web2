@@ -16,8 +16,10 @@
     $r->addRoute("marcas", "GET", "showController", "showMarcas");
     $r->addRoute("marcas/:id", "GET", "showController", "showProductos");
     $r->addRoute("producto/:id", "GET", "showController", "showDescripcionProducto");
+    $r->addRoute("productosig/:id", "GET", "showController", "showDescripcionProductoSig");
+    $r->addRoute("productoant/:id", "GET", "showController", "showDescripcionProductoAnt");
     $r->addRoute("registro", "GET", "showController", "showRegistro");
-
+    
     $r->addRoute("insertar", "POST", "ComandController", "insertarProducto");
     $r->addRoute("editar/:id", "GET", "ComandController", "editarProductos");
     $r->addRoute("borrar/:id", "GET", "ComandController", "borrarProducto");
@@ -26,11 +28,16 @@
     $r->addRoute("marcaseditar/:id", "GET", "ComandController", "editarMarca");
     $r->addRoute("marcasborrar/:id", "GET", "ComandController", "borrarMarca");
     $r->addRoute("marcaseditar", "POST", "ComandController", "editarYGuardarMarcas");
-
+    
     $r->addRoute("login", "POST", "UserController", "loginUser");
     $r->addRoute("logout", "GET", "UserController", "logout");
     $r->addRoute("registro/addUser","POST", "UserController", "insertarUser");
+<<<<<<< HEAD
     $r->addRoute("registroUpdate","POST", "UserController", "updateUser");
+=======
+    $r->addRoute("update/:username","GET", "UserController", "updateUser");
+    $r->addRoute("registroEliminar/:username","GET", "UserController", "deleteUser");
+>>>>>>> develop
 
     
     //Ruta por defecto.

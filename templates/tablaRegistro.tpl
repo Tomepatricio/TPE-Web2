@@ -1,3 +1,7 @@
+<div class="container">
+  <h3 class="text-center text-light bg-dark">Registro</h3>
+</div>
+
 <form class="container" action="registro/addUser" method="post">
   <div class="form-group">
     <small class="form-text">Nombre Usuario</small>

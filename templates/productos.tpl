@@ -35,7 +35,7 @@
                 <td>{$producto->presentacion}ml</td>
                 <td>${$producto->precio}</td>
                 <td>{$producto->nombreMarca}</td>
-                {if $user}
+                {if $user&&$user->admin==1}
                     <td><a href="editar/{$producto->id}"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                     <a href="borrar/{$producto->id}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 {/if}
@@ -49,7 +49,7 @@
                 <td>{$producto->presentacion}ml</td>
                 <td>${$producto->precio}</td>
                 <td>{$producto->nombreMarca}</td>
-                {if $user}
+                {if $user&&$user->admin==1}
                     <td><a href="editar/{$producto->id}"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                     <a href="borrar/{$producto->id}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 {/if}
@@ -60,7 +60,7 @@
     </tbody>
 </table>
 
-{if $user}
+{if $user&&$user->admin==1}
     {include file="formAddProducto.tpl"}
 {/if}
 

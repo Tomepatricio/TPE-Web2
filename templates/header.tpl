@@ -10,10 +10,6 @@
     <script src="js/navegacion.js"></script>
     <script src="js/servicios.js"></script>
     <style>
-        /*body  {
-        background-image: url("images/gif.gif");
-        background-size:100%;
-        }*/
         .carousel-inner img {
             max-width: 100%;
             max-height: 660px;
@@ -40,6 +36,10 @@
                     <div class="col">
                         <div class="row">
                             <h3 class="text-white">{$user->username}</h3>
+<<<<<<< HEAD
+=======
+                            <input id="admin" type="hidden" value="{$user->admin}">
+>>>>>>> develop
                             <div class="m-2">
                                 <a href="logout"><small>Logout</small></a>
                                 <a class="text-white text-center ml-2" href="registro"><span class="badge badge-warning">Administrar Usuarios</span></a>
@@ -47,6 +47,7 @@
                         </div>
                     </div>
                 {else}
+                    <input id="admin" type="hidden" value="2">
                     <div class="col">
                         <small class="form-text text-white">{$message}</small>
                         <form action="login" method="post" class="form-inline">
