@@ -19,6 +19,23 @@ let comentarios= new Vue({
                     this.comments.splice(comentario,1);
             })
             .catch(error=>console.log(error))
+        },
+        addComment:e=>{//VER QUE PASA QUE NO ESTA ENTRANDO POR ACA
+            e.preventDefault();
+            console.log("ACa estoy");
+            cc={
+                comentario: document.querySelector('#comment').value,
+                id_producto: document.querySelector('#idProducto').value,
+                valoracion: document.querySelector('#valoracion').value
+            }
+            fetch('api/comment', {
+                method:'POST',
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify(cc)
+            })
+            .then(response=>response.json())
+            .then(comment=>comentarios.comments.push(comment))
+            .catch(error=>console.log(error))
         }
     }
 });
@@ -27,6 +44,16 @@ document.addEventListener("DOMContentLoaded", function(){
     comentarios.id=document.querySelector("#prodId").value;
     comentarios.admin=document.querySelector("#admin").value;
     getComment();
+    if(comentarios.admin==1 || comentarios.admin==0){
+        console.log("hola");
+        document.querySelector('#formComment').addEventListener('submit',e=>addComment(e));
+    }
+    else    
+        console.log("chau");
+    // if(comentarios.admin!="0")
+    //     setTimeout(() => {
+            
+    //     }, 3000);
 })
 
 function getComment(){
@@ -34,8 +61,29 @@ function getComment(){
     .then(response => response.json())
     .then(comment => {
         comentarios.comments = comment;})
-        .catch(error=>console.log(error))
+    .catch(error=>console.log(error))
 }
+
+function addComment(e){//VER QUE PASA QUE NO ESTA ENTRANDO POR ACA
+    e.preventDefault();
+    console.log("ACa estoy");
+    let cc={
+        comentario: document.querySelector('#comment').value,
+        id_producto: comentarios.id,
+        valoracion: document.querySelector('#valoracion').value
+    }
+    fetch('api/comment', {
+        method:'POST',
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(cc)
+    })
+    .then(response=>response.json())
+    .then(comment=>{
+        comentarios.comments.push(comment);
+    })
+    .catch(error=>console.log(error))
+ }
+
 //Tengo que ver que cuando cargo un comentario hago refresh de toda la pagina, 
 //y tengo que agregar una user story y tengo que mostrar los comentarios siempre
 //solo los users pueden agregar y los admin pueden borrar

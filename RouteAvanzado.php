@@ -16,6 +16,8 @@
     $r->addRoute("marcas", "GET", "showController", "showMarcas");
     $r->addRoute("marcas/:id", "GET", "showController", "showProductos");
     $r->addRoute("producto/:id", "GET", "showController", "showDescripcionProducto");
+    $r->addRoute("productosig/:id", "GET", "showController", "showDescripcionProductoSig");
+    $r->addRoute("productoant/:id", "GET", "showController", "showDescripcionProductoAnt");
     $r->addRoute("registro", "GET", "showController", "showRegistro");
     
     $r->addRoute("insertar", "POST", "ComandController", "insertarProducto");

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-23 23:10:34
+/* Smarty version 3.1.34-dev-7, created on 2020-11-27 19:03:26
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fbc335a992065_69944309',
+  'unifunc' => 'content_5fc13f6ee748b2_16254796',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd09c83521166c4461c77891d8cfdf4b5b7f957a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\header.tpl',
-      1 => 1606169432,
+      1 => 1606500203,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fbc335a992065_69944309 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc13f6ee748b2_16254796 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,6 +77,7 @@ function content_5fbc335a992065_69944309 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                     </div>
                 <?php } else { ?>
+                    <input id="admin" type="hidden" value="2">
                     <div class="col">
                         <small class="form-text text-white"><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
 </small>

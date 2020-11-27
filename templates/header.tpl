@@ -44,6 +44,7 @@
                         </div>
                     </div>
                 {else}
+                    <input id="admin" type="hidden" value="2">
                     <div class="col">
                         <small class="form-text text-white">{$message}</small>
                         <form action="login" method="post" class="form-inline">

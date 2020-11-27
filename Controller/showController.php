@@ -52,6 +52,45 @@ Class showController {//cambiar nombre al controller
         $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
     }
 
+    function showDescripcionProductoSig($params){
+        $userlog=$this->user->checkLog();
+        $id=$params[':id'];
+        $productos=$this->modelProducto->getProductosDB();
+        $index=0;
+        foreach ($productos as $prod) {
+            if($prod->id != $id)
+                $index++;
+            else
+                $id=++$index;
+        }
+        $producto=$this->modelProducto->getProductoByIdDB($productos[$id]->id);
+        $marcas=$this->modelMarca->getMarcaDB();
+        $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
+    }
+
+    function showDescripcionProductoAnt($params){
+        $userlog=$this->user->checkLog();
+        /*$productos=$this->modelProducto->getProductosDB();
+        $producto=$params[':id'];
+        foreach ($productos as $prod) {
+            if ($prod->id==$producto){
+                $producto=$prod;
+            }
+        }*/
+        $id=$params[':id'];
+        $productos=$this->modelProducto->getProductosDB();
+        $index=0;
+        foreach ($productos as $prod) {
+            if($prod->id != $id)
+                $index++;
+            else
+                $id=--$index;
+        }
+        $producto=$this->modelProducto->getProductoByIdDB($productos[$id]->id);
+        $marcas=$this->modelMarca->getMarcaDB();
+        $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
+    }
+
     function showServicios(){
         $userlog=$this->user->checkLog();
         $this->view->renderServicios($userlog);

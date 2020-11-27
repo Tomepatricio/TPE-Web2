@@ -18,23 +18,25 @@
   </div>
 </div>
 
-{if $user}  
-  <h3 class="container text-center border border-info mt-3">Comentarios</h3><!--Ver esto, hacer la API-->
-  {include file="vue/comment.vue"}
-  <form class="container text-center" action="api/comment" method="POST">
-    <div>
-      <textarea class="border border-info text-success" name="comment" id="" cols="50" rows="5" placeholder="Dejanos tu comentario..."></textarea>
-      <input id="prodId" type="hidden" name="idProducto" value="{$producto->id}">
-    </div>
-    <div>
-      <label for="vol">Valoracion:</label>
-    </div>
-    <div>
-      <input type="range" id="valoracion" name="valoracion" min="0" max="5">
-    </div>
+<h3 class="container text-center border border-info mt-3">Comentarios</h3>
+<input id="prodId" type="hidden" name="idProducto" value="{$producto->id}">
+{include file="vue/comment.vue"}
+
+{if $user}
+<form class="container text-center" id="formComment">
+  <div>
+    <textarea class="border border-info text-success" name="comment" id="comment" cols="50" rows="5" placeholder="Dejanos tu comentario..."></textarea>
+    <input id="prodId" type="hidden" name="idProducto" value="{$producto->id}">
+  </div>
+  <div>
+    <label for="vol">Valoracion:</label>
+  </div>
+  <div>
+    <input type="range" id="valoracion" name="valoracion" min="0" max="5">
+  </div>
     <button class="btn btn-dark rounded-pill" type="submit">Enviar</button>
   </form>
-{/if}
+{/if} 
 
 {if $user&&$user->admin==1}
   <div class="container mt-3">
@@ -42,6 +44,13 @@
     {include file="formEditProducto.tpl"}
   </div>
 {/if}
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination text d-flex justify-content">
+    <li class="page-item"><a class="page-link" href="productoant/{$producto->id}">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="productosig/{$producto->id}">Next</a></li>
+  </ul>
+</nav>
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

@@ -9,8 +9,9 @@ Class ModelComment {
     }
 
     function sendCommentDB($comment,$idProducto,$valoracion){
-        $sentencia=$this->db->prepare("INSERT INTO comment(comentario,id_producto,valoracion)VALUES(?,?,?)");
-        $sentencia->execute(array($comment,$idProducto,$valoracion));
+        $sentencia=$this->db->prepare("INSERT INTO comment(comentario,valoracion,id_producto)VALUES(?,?,?)");
+        $respuesta=$sentencia->execute(array($comment,$valoracion,$idProducto));
+        return $respuesta;
     }
 
     function getCommentsDB(){
