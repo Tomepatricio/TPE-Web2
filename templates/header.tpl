@@ -22,6 +22,10 @@
             vertical-align: text-top;
             border-bottom: 2px solid #dee2e6;
         }
+        .page-link{
+            background-color: rgb(13, 133, 163);
+            color:white;
+        }
         </style>
 </head>
 <body>

@@ -45,12 +45,14 @@
   </div>
 {/if}
 
+<div class="d-flex justify-content-center">
 <nav aria-label="Page navigation example">
-  <ul class="pagination text d-flex justify-content">
+  <ul class="pagination text">
     <li class="page-item"><a class="page-link" href="productoant/{$producto->id}">Previous</a></li>
     <li class="page-item"><a class="page-link" href="productosig/{$producto->id}">Next</a></li>
   </ul>
 </nav>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

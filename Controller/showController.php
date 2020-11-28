@@ -39,13 +39,6 @@ Class showController {//cambiar nombre al controller
 
     function showDescripcionProducto($params){
         $userlog=$this->user->checkLog();
-        /*$productos=$this->modelProducto->getProductosDB();
-        $producto=$params[':id'];
-        foreach ($productos as $prod) {
-            if ($prod->id==$producto){
-                $producto=$prod;
-            }
-        }*/
         $id=$params[':id'];
         $producto=$this->modelProducto->getProductoByIdDB($id);
         $marcas=$this->modelMarca->getMarcaDB();
@@ -57,12 +50,18 @@ Class showController {//cambiar nombre al controller
         $id=$params[':id'];
         $productos=$this->modelProducto->getProductosDB();
         $index=0;
-        foreach ($productos as $prod) {
-            if($prod->id != $id)
-                $index++;
-            else
-                $id=++$index;
-        }
+        for ($index=0; $index < count($productos); $index++) { 
+            if($productos[$index]->id == $id){
+                if($index<(count($productos)-1)){
+                    $id=++$index;
+                    $index=count($productos);
+                }
+                else{
+                    $id=0;
+                    $index=count($productos);
+                }
+            }
+        }  
         $producto=$this->modelProducto->getProductoByIdDB($productos[$id]->id);
         $marcas=$this->modelMarca->getMarcaDB();
         $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
@@ -70,22 +69,21 @@ Class showController {//cambiar nombre al controller
 
     function showDescripcionProductoAnt($params){
         $userlog=$this->user->checkLog();
-        /*$productos=$this->modelProducto->getProductosDB();
-        $producto=$params[':id'];
-        foreach ($productos as $prod) {
-            if ($prod->id==$producto){
-                $producto=$prod;
-            }
-        }*/
         $id=$params[':id'];
         $productos=$this->modelProducto->getProductosDB();
         $index=0;
-        foreach ($productos as $prod) {
-            if($prod->id != $id)
-                $index++;
-            else
-                $id=--$index;
-        }
+        for ($index=0; $index < count($productos); $index++) { 
+            if($productos[$index]->id == $id){
+                if($index>0){
+                    $id=--$index;
+                    $index=count($productos);
+                }
+                else{
+                    $id=(count($productos)-1);
+                    $index=count($productos);
+                }
+            }
+        }  
         $producto=$this->modelProducto->getProductoByIdDB($productos[$id]->id);
         $marcas=$this->modelMarca->getMarcaDB();
         $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
