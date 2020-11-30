@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-27 19:42:19
+/* Smarty version 3.1.34-dev-7, created on 2020-11-28 21:36:57
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\descripcionProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc1488bce52a2_37909807',
+  'unifunc' => 'content_5fc2b4e96f1715_54677501',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fd2298b22061aa77b87e7da54d59d39b40534b14' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\descripcionProducto.tpl',
-      1 => 1606502538,
+      1 => 1606595009,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc1488bce52a2_37909807 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc2b4e96f1715_54677501 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

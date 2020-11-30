@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-27 18:59:58
+/* Smarty version 3.1.34-dev-7, created on 2020-11-30 01:17:39
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\vue\comment.vue' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc13e9eeafec4_38242060',
+  'unifunc' => 'content_5fc43a23624198_10383999',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3746e2c384e23ac55b2bc814cae2efef5d04095c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\vue\\comment.vue',
-      1 => 1606499990,
+      1 => 1606694183,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc13e9eeafec4_38242060 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc43a23624198_10383999 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <div id="vue-comentarios">
         <ul class="container">

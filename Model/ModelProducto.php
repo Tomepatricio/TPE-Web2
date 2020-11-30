@@ -20,9 +20,9 @@ Class ModelProducto{
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
-    function agregarProductoDB($nombre,$detalle,$presentacion,$precio,$id_marca){
-        $sentencia = $this->db->prepare("INSERT INTO producto(nombre, detalle, presentacion, precio, id_marca) VALUES(?,?,?,?,?)");
-        $sentencia->execute(array($nombre,$detalle,$presentacion,$precio,$id_marca));
+    function agregarProductoDB($nombre,$detalle,$presentacion,$precio,$id_marca,$imagen){
+        $sentencia = $this->db->prepare("INSERT INTO producto(nombre, detalle, presentacion, precio, imagen, id_marca) VALUES(?,?,?,?,?,?)");
+        $sentencia->execute(array($nombre,$detalle,$presentacion,$precio,$imagen,$id_marca));
     }
     
     function borrarProductoDB($id){

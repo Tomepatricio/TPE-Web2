@@ -1,36 +1,40 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-13 00:43:12
+/* Smarty version 3.1.34-dev-7, created on 2020-11-30 03:12:17
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\productos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fadc890cd73d8_21864732',
+  'unifunc' => 'content_5fc45501913b46_02144784',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3ed2ae6a781cec2566d57f9c7c2ccd05107a0ead' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\productos.tpl',
-      1 => 1605224587,
+      1 => 1606702335,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:vue/search.vue' => 1,
     'file:formAddProducto.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fadc890cd73d8_21864732 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc45501913b46_02144784 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\libs\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <h1 class="text-center">Productos</h1>
 
-<table class="table container">
+<?php $_smarty_tpl->_subTemplateRender("file:vue/search.vue", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<table id="table-products" class="table container">
     <thead class="thead-dark text-center">
         <tr>
             <th scope="col">ID</th>
@@ -62,7 +66,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="product-row">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productos']->value, 'producto');
 $_smarty_tpl->tpl_vars['producto']->do_else = true;
@@ -70,7 +74,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['producto']->valu
 $_smarty_tpl->tpl_vars['producto']->do_else = false;
 ?>
         <?php if ($_smarty_tpl->tpl_vars['filtro']->value == null || $_smarty_tpl->tpl_vars['filtro']->value == "todas") {?>
-            <tr class="text-center">
+            <tr id="product-row" class="text-center">
                 <th scope="row"><?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 </th>
                 <td><a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
@@ -93,7 +97,7 @@ ml</td>
             </tr>
         <?php } else { ?>
         <?php if ($_smarty_tpl->tpl_vars['producto']->value->id_marca == $_smarty_tpl->tpl_vars['filtro']->value) {?>
-            <tr class="text-center">
+            <tr id="product-row" class="text-center">
                 <th scope="row"><?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 </th>
                 <td><a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
@@ -125,6 +129,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php if ($_smarty_tpl->tpl_vars['user']->value && $_smarty_tpl->tpl_vars['user']->value->admin == 1) {?>
     <?php $_smarty_tpl->_subTemplateRender("file:formAddProducto.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }?>
+
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/search.js"><?php echo '</script'; ?>
+>
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

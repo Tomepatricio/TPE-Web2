@@ -12,29 +12,11 @@ let comentarios= new Vue({
             fetch('api/comment/'+id, {
                 method:'DELETE'
             })
-            //.then(response => getComment())
             .then(response=>{
                 let comentario=this.comments.findIndex(comment=>id===comment.id);
                 if(comentario>=0)
                     this.comments.splice(comentario,1);
             })
-            .catch(error=>console.log(error))
-        },
-        addComment:e=>{//VER QUE PASA QUE NO ESTA ENTRANDO POR ACA
-            e.preventDefault();
-            console.log("ACa estoy");
-            cc={
-                comentario: document.querySelector('#comment').value,
-                id_producto: document.querySelector('#idProducto').value,
-                valoracion: document.querySelector('#valoracion').value
-            }
-            fetch('api/comment', {
-                method:'POST',
-                headers:{"Content-Type":"application/json"},
-                body:JSON.stringify(cc)
-            })
-            .then(response=>response.json())
-            .then(comment=>comentarios.comments.push(comment))
             .catch(error=>console.log(error))
         }
     }
@@ -50,10 +32,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     else    
         console.log("chau");
-    // if(comentarios.admin!="0")
-    //     setTimeout(() => {
-            
-    //     }, 3000);
 })
 
 function getComment(){
@@ -66,7 +44,6 @@ function getComment(){
 
 function addComment(e){//VER QUE PASA QUE NO ESTA ENTRANDO POR ACA
     e.preventDefault();
-    console.log("ACa estoy");
     let cc={
         comentario: document.querySelector('#comment').value,
         id_producto: comentarios.id,
