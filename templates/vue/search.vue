@@ -7,7 +7,7 @@
 <div class="input-group mb-3">
     <div class="input-group-prepend">
       <div class="input-group-text">
-        <input id="checkInput" type="checkbox" aria-label="Checkbox for following text input">
+        <span>Filtro:</span>
       </div>
     </div>
     <input type="text" id="inputSearch" v-on:keyup="search" class="form-control" aria-label="Text input with checkbox">
