@@ -31,12 +31,12 @@ function renderProductosfiltrados(){
     for (let index = 0; index < busqueda.products.length; index++){
         console.log("aaaaaaa"+index);
         if(user!=1){
-            document.querySelector("#product-row").innerHTML+="<tr><th scope='row'>"+busqueda.products[index].id+"</th><td><a href='producto/"+busqueda.products[index].id+"'>"
+            document.querySelector("#product-row").innerHTML+="<tr class='text-center'><th scope='row'>"+busqueda.products[index].id+"</th><td><a href='producto/"+busqueda.products[index].id+"'>"
             +busqueda.products[index].nombre+"</a></td><td>"+truncateString(busqueda.products[index].detalle)+"</td><td>"
             +busqueda.products[index].presentacion+"ml</td><td>$"+busqueda.products[index].precio+
             "</td><td>"+busqueda.products[index].nombreMarca+"</td></tr>"
         }else{
-            document.querySelector("#product-row").innerHTML+="<tr><th scope='row'>"+busqueda.products[index].id+"</th><td><a href='producto/"+busqueda.products[index].id+"'>"
+            document.querySelector("#product-row").innerHTML+="<tr class='text-center'  ><th scope='row'>"+busqueda.products[index].id+"</th><td><a href='producto/"+busqueda.products[index].id+"'>"
             +busqueda.products[index].nombre+"</a></td><td>"+truncateString(busqueda.products[index].detalle)+"</td><td>"
             +busqueda.products[index].presentacion+"ml</td><td>$"+busqueda.products[index].precio+
             "</td><td>"+busqueda.products[index].nombreMarca+"</td><td><a href=editar/"+busqueda.products[index].id+
