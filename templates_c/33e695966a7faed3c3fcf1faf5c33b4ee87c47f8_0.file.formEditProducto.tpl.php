@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-30 19:09:57
+/* Smarty version 3.1.34-dev-7, created on 2020-12-01 00:33:29
   from 'C:\xampp\htdocs\Web2\TPE\TPE-Web2\templates\formEditProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc53575ea5147_94176639',
+  'unifunc' => 'content_5fc58149c7d694_63645545',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '33e695966a7faed3c3fcf1faf5c33b4ee87c47f8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TPE\\TPE-Web2\\templates\\formEditProducto.tpl',
-      1 => 1606758210,
+      1 => 1606779205,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc53575ea5147_94176639 (Smarty_Internal_Template $_smarty_tpl) {
-?><form class="container" action="editar" method="post">
+function content_5fc58149c7d694_63645545 (Smarty_Internal_Template $_smarty_tpl) {
+?><form class="container" action="editar" method="post" enctype="multipart/form-data">
     <div class="form-group">
     <small class="form-text text-muted">ID</small>
     <input type="hidden" class="form-control" name="idProducto" value=<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
@@ -63,6 +63,10 @@ $_smarty_tpl->tpl_vars['marca']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </select>
+    </div>
+    <div class="form-group">
+        <small class="form-text">Adjuntar Imagen:</small>
+        <input type="file" class="" name="imgProducto" id="imgUpload">
     </div>
     <button type="submit" class="btn btn-warning">Editar</button>
 </form><?php }

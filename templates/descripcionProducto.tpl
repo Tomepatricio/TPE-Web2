@@ -4,7 +4,7 @@
 
 <div class="row container">
   <div class="col-6 text-center">
-    <img style="width: 10rem;" src="images/{$producto->id}.jpg" class="card-img-top" alt="...">
+    <img style="width: 10rem;" src="{$producto->imagen}" class="card-img-top" alt="...">
   </div>
   <div class="col-6">
   <div class="card text-center container" style="width: 40rem;">

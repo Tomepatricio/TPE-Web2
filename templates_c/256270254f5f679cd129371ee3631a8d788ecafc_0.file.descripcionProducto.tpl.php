@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-30 18:56:54
+/* Smarty version 3.1.34-dev-7, created on 2020-11-30 22:56:11
   from 'C:\xampp\htdocs\Web2\TPE\TPE-Web2\templates\descripcionProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc53266b88cc7_55419932',
+  'unifunc' => 'content_5fc56a7be72738_05929654',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '256270254f5f679cd129371ee3631a8d788ecafc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TPE\\TPE-Web2\\templates\\descripcionProducto.tpl',
-      1 => 1606758316,
+      1 => 1606773369,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc53266b88cc7_55419932 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc56a7be72738_05929654 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -33,8 +33,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
 <div class="row container">
   <div class="col-6 text-center">
-    <img style="width: 10rem;" src="images/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
-.jpg" class="card-img-top" alt="...">
+    <img style="width: 10rem;" src="<?php echo $_smarty_tpl->tpl_vars['producto']->value->imagen;?>
+" class="card-img-top" alt="...">
   </div>
   <div class="col-6">
   <div class="card text-center container" style="width: 40rem;">
