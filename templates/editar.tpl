@@ -23,8 +23,8 @@
     </tbody>
 </table>
 
-
-    <form class="container" action="editar" method="post">
+{include file="formEditProducto.tpl"}
+    {* <form class="container" action="editar" method="post">
       <div class="form-group">
         <small class="form-text text-muted">ID</small>
         <input type="hidden" class="form-control" name="idProducto" value={$producto->id}>
@@ -54,7 +54,7 @@
       </select>
       </div>
       <button type="submit" class="btn btn-warning">Editar</button>
-    </form>
+    </form> *}
 
 
 {include file="footer.tpl"}

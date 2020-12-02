@@ -39,6 +39,7 @@ Class showController {//cambiar nombre al controller
 
     function showDescripcionProducto($params){
         $userlog=$this->user->checkLog();
+<<<<<<< HEAD
         /*$productos=$this->modelProducto->getProductosDB();
         $producto=$params[':id'];
         foreach ($productos as $prod) {
@@ -48,6 +49,54 @@ Class showController {//cambiar nombre al controller
         }*/
         $id=$params[':id'];
         $producto=$this->modelProducto->getProductoByIdDB($id);
+=======
+        $id=$params[':id'];
+        $producto=$this->modelProducto->getProductoByIdDB($id);
+        $marcas=$this->modelMarca->getMarcaDB();
+        $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
+    }
+
+    function showDescripcionProductoSig($params){
+        $userlog=$this->user->checkLog();
+        $id=$params[':id'];
+        $productos=$this->modelProducto->getProductosDB();
+        $index=0;
+        for ($index=0; $index < count($productos); $index++) { 
+            if($productos[$index]->id == $id){
+                if($index<(count($productos)-1)){
+                    $id=++$index;
+                    $index=count($productos);
+                }
+                else{
+                    $id=0;
+                    $index=count($productos);
+                }
+            }
+        }  
+        $producto=$this->modelProducto->getProductoByIdDB($productos[$id]->id);
+        $marcas=$this->modelMarca->getMarcaDB();
+        $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
+    }
+
+    function showDescripcionProductoAnt($params){
+        $userlog=$this->user->checkLog();
+        $id=$params[':id'];
+        $productos=$this->modelProducto->getProductosDB();
+        $index=0;
+        for ($index=0; $index < count($productos); $index++) { 
+            if($productos[$index]->id == $id){
+                if($index>0){
+                    $id=--$index;
+                    $index=count($productos);
+                }
+                else{
+                    $id=(count($productos)-1);
+                    $index=count($productos);
+                }
+            }
+        }  
+        $producto=$this->modelProducto->getProductoByIdDB($productos[$id]->id);
+>>>>>>> develop
         $marcas=$this->modelMarca->getMarcaDB();
         $this->view->renderDescripcionProducto($producto,$marcas,$userlog);
     }

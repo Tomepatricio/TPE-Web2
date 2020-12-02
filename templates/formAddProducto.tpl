@@ -1,4 +1,4 @@
-<form class="container" action="insertar" method="post">
+<form class="container" action="insertar" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <small class="form-text">Nombre del Producto</small>
     <input type="text" class="form-control" name="nombreProducto" placeholder='"Ejemplo, Final Touch"'>
@@ -22,6 +22,10 @@
             <option name="marcaProducto" value={$marca->id_marca}>{$marca->nombreMarca}</option>
         {/foreach}
     </select>
+  </div>
+  <div class="form-group">
+    <small class="form-text">Adjuntar Imagen:</small>
+    <input type="file" class="" name="imgProducto" id="imgUpload">
   </div>
   <button type="submit" class="btn btn-primary">Agregar</button>
 </form>

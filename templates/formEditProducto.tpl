@@ -1,4 +1,4 @@
-<form class="container" action="editar" method="post">
+<form class="container" action="editar" method="post" enctype="multipart/form-data">
     <div class="form-group">
     <small class="form-text text-muted">ID</small>
     <input type="hidden" class="form-control" name="idProducto" value={$producto->id}>
@@ -26,6 +26,10 @@
             <option name="marcaProducto" value="{$marca->id_marca}">{$marca->nombreMarca}</option>
         {/foreach}
     </select>
+    </div>
+    <div class="form-group">
+        <small class="form-text">Adjuntar Imagen:</small>
+        <input type="file" class="" name="imgProducto" id="imgUpload">
     </div>
     <button type="submit" class="btn btn-warning">Editar</button>
 </form>

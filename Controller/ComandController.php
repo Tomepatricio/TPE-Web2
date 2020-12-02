@@ -1,6 +1,7 @@
  <?php
 
 require_once 'showController.php';
+require_once './Model/ModelProducto.php';
 
 Class ComandController {
 
@@ -17,11 +18,10 @@ Class ComandController {
     }
 
  function borrarProducto($params){
-    $userlog=$this->user->checkLog();
-    if ($userlog!=false) {
+     $userlog=$this->user->checkLog();
+     if ($userlog!=false) {
         $delete=$params[':id'];
         $this->modelProducto->borrarProductoDB($delete);
-        $productos=$this->modelProducto->getProductosDB();
     }
     $this->view->showProductosLocation();
     }
@@ -29,7 +29,15 @@ Class ComandController {
     function insertarProducto(){
         $userlog=$this->user->checkLog();
         if ($userlog!=false) {
-            $this->modelProducto->agregarProductoDB($_POST['nombreProducto'],$_POST['detalleProducto'],$_POST['presentacionProducto'],$_POST['precioProducto'],$_POST['marcaProducto']);
+            if($_FILES['imgProducto']['type'] == "image/jpg" || $_FILES['imgProducto']['type'] == "image/jpeg" || $_FILES['imgProducto']['type'] == "image/png"){
+                $filePath = "images/" . uniqid("", true) . "." 
+                . strtolower(pathinfo($_FILES['imgProducto']['name'], PATHINFO_EXTENSION));
+                
+                move_uploaded_file($_FILES["imgProducto"]["tmp_name"],$filePath);
+                $prod=$this->modelProducto->agregarProductoDB($_POST['nombreProducto'],$_POST['detalleProducto'],$_POST['presentacionProducto'],$_POST['precioProducto'],$_POST['marcaProducto'],$filePath);
+            }
+            else
+                $this->modelProducto->agregarProductoDB($_POST['nombreProducto'],$_POST['detalleProducto'],$_POST['presentacionProducto'],$_POST['precioProducto'],$_POST['marcaProducto']);
             $productos=$this->modelProducto->getProductosDB();
         }
         $this->view->showProductosLocation();
@@ -79,10 +87,17 @@ Class ComandController {
         $this->view->showMarcasLocation();
     }
     
-    function editarYGuardarProductos(){//Guarda en Base en datos
+    function editarYGuardarProductos(){
         $userlog=$this->user->checkLog();
         if ($userlog!=false) {
-            $this->modelProducto->editarProductosDB($_POST['idProducto'],$_POST['nombreProducto'],$_POST['detalleProducto'],$_POST['presentacionProducto'],$_POST['precioProducto'],$_POST['marcaProducto']);
+            if($_FILES['imgProducto']['type'] == "image/jpg" || $_FILES['imgProducto']['type'] == "image/jpeg" || $_FILES['imgProducto']['type'] == "image/png"){
+                $filePath = "images/" . uniqid("", true) . "." 
+                . strtolower(pathinfo($_FILES['imgProducto']['name'], PATHINFO_EXTENSION));
+                move_uploaded_file($_FILES["imgProducto"]["tmp_name"],$filePath);
+                $this->modelProducto->editarProductosDB($_POST['idProducto'],$_POST['nombreProducto'],$_POST['detalleProducto'],$_POST['presentacionProducto'],$_POST['precioProducto'],$_POST['marcaProducto'],$filePath);
+            }else{
+                $this->modelProducto->editarProductosDB($_POST['idProducto'],$_POST['nombreProducto'],$_POST['detalleProducto'],$_POST['presentacionProducto'],$_POST['precioProducto'],$_POST['marcaProducto']);
+            }
             $productos=$this->modelProducto->getProductosDB();
         }
         $this->view->showProductosLocation();

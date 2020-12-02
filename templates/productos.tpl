@@ -2,7 +2,9 @@
 
 <h1 class="text-center">Productos</h1>
 
-<table class="table container">
+{include file="vue/search.vue"}
+
+<table id="table-products" class="table container">
     <thead class="thead-dark text-center">
         <tr>
             <th scope="col">ID</th>
@@ -25,31 +27,31 @@
             </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="product-row">
         {foreach from=$productos item=producto}
         {if $filtro==null || $filtro=="todas"}
-            <tr class="text-center">
+            <tr id="product-row" class="text-center">
                 <th scope="row">{$producto->id}</th>
                 <td><a href="producto/{$producto->id}">{$producto->nombre}</a></td>
                 <td>{$producto->detalle|truncate:80}</td>
                 <td>{$producto->presentacion}ml</td>
                 <td>${$producto->precio}</td>
                 <td>{$producto->nombreMarca}</td>
-                {if $user}
+                {if $user&&$user->admin==1}
                     <td><a href="editar/{$producto->id}"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                     <a href="borrar/{$producto->id}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 {/if}
             </tr>
         {else}
         {if $producto->id_marca == $filtro}
-            <tr class="text-center">
+            <tr id="product-row" class="text-center">
                 <th scope="row">{$producto->id}</th>
                 <td><a href="producto/{$producto->id}">{$producto->nombre}</a></td>
                 <td>{$producto->detalle|truncate:80}</td>
                 <td>{$producto->presentacion}ml</td>
                 <td>${$producto->precio}</td>
                 <td>{$producto->nombreMarca}</td>
-                {if $user}
+                {if $user&&$user->admin==1}
                     <td><a href="editar/{$producto->id}"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                     <a href="borrar/{$producto->id}"><button type="button" class="btn btn-outline-danger">Borrar</button></a></td>
                 {/if}
@@ -60,8 +62,14 @@
     </tbody>
 </table>
 
-{if $user}
-    {include file="formAddProducto.tpl"}
+{if $user&&$user->admin==1}
+    <div class="container mt-3">
+        <h3 class="text-center border border-info">Agregar Producto</h3>
+        {include file="formAddProducto.tpl"}
+    </div>
 {/if}
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/search.js"></script>
 
 {include file="footer.tpl"}

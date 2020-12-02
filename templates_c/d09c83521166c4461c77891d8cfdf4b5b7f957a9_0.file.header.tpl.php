@@ -1,18 +1,30 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.34-dev-7, created on 2020-11-12 23:06:04
+=======
+/* Smarty version 3.1.34-dev-7, created on 2020-11-27 19:48:36
+>>>>>>> develop
   from 'C:\xampp\htdocs\web2\TPE-API\git\test\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
+<<<<<<< HEAD
   'unifunc' => 'content_5fadb1cc7094d2_35708216',
+=======
+  'unifunc' => 'content_5fc14a04cf61a8_67416450',
+>>>>>>> develop
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd09c83521166c4461c77891d8cfdf4b5b7f957a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE-API\\git\\test\\templates\\header.tpl',
+<<<<<<< HEAD
       1 => 1605218763,
+=======
+      1 => 1606502915,
+>>>>>>> develop
       2 => 'file',
     ),
   ),
@@ -20,7 +32,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_5fadb1cc7094d2_35708216 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_5fc14a04cf61a8_67416450 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> develop
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,10 +56,13 @@ function content_5fadb1cc7094d2_35708216 (Smarty_Internal_Template $_smarty_tpl)
  src="js/servicios.js"><?php echo '</script'; ?>
 >
     <style>
+<<<<<<< HEAD
         /*body  {
         background-image: url("images/gif.gif");
         background-size:100%;
         }*/
+=======
+>>>>>>> develop
         .carousel-inner img {
             max-width: 100%;
             max-height: 660px;
@@ -56,6 +75,13 @@ function content_5fadb1cc7094d2_35708216 (Smarty_Internal_Template $_smarty_tpl)
             vertical-align: text-top;
             border-bottom: 2px solid #dee2e6;
         }
+<<<<<<< HEAD
+=======
+        .page-link{
+            background-color: rgb(13, 133, 163);
+            color:white;
+        }
+>>>>>>> develop
         </style>
 </head>
 <body>
@@ -72,6 +98,11 @@ function content_5fadb1cc7094d2_35708216 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="row">
                             <h3 class="text-white"><?php echo $_smarty_tpl->tpl_vars['user']->value->username;?>
 </h3>
+<<<<<<< HEAD
+=======
+                            <input id="admin" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['user']->value->admin;?>
+">
+>>>>>>> develop
                             <div class="m-2">
                                 <a href="logout"><small>Logout</small></a>
                                 <a class="text-white text-center ml-2" href="registro"><span class="badge badge-warning">Administrar Usuarios</span></a>
@@ -79,6 +110,10 @@ function content_5fadb1cc7094d2_35708216 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                     </div>
                 <?php } else { ?>
+<<<<<<< HEAD
+=======
+                    <input id="admin" type="hidden" value="2">
+>>>>>>> develop
                     <div class="col">
                         <small class="form-text text-white"><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
 </small>

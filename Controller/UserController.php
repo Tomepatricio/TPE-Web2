@@ -76,6 +76,25 @@ Class UserController {
         }else{
             $this->view->renderUsers(null,null,"Ingrese Usuario");
         }
+<<<<<<< HEAD
+=======
+    }
+
+    function updateUser($params){
+        $username=$params[':username'];
+        $user=$this->modelUser->getUserByUsernameDB ($username);
+        $admin=!$user->admin;
+        if($user!=null){
+            $this->modelUser->setAdminDB($username,$admin);
+        }
+        $this->view->showRegistroLocation();
+    }
+
+    function deleteUser($params){
+        $username=$params[':username'];
+        $this->modelUser->deleteUserDB($username);
+        $this->view->showRegistroLocation();
+>>>>>>> develop
     }
 
     func
