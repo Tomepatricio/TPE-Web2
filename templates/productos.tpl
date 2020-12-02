@@ -63,7 +63,10 @@
 </table>
 
 {if $user&&$user->admin==1}
-    {include file="formAddProducto.tpl"}
+    <div class="container mt-3">
+        <h3 class="text-center border border-info">Agregar Producto</h3>
+        {include file="formAddProducto.tpl"}
+    </div>
 {/if}
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

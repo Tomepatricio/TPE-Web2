@@ -30,7 +30,10 @@
 </table>
 
 {if $user&&$user->admin==1}
-    {include file="formAddMarca.tpl"}
+    <div class="container mt-3">
+        <h3 class="text-center border border-info">Agregar Marca</h3>
+        {include file="formAddMarca.tpl"}
+    </div>    
 {/if}
 
 {include file="footer.tpl"}

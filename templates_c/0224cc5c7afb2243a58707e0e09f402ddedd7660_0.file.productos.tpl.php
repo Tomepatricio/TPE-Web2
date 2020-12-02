@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-30 19:09:36
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 18:17:22
   from 'C:\xampp\htdocs\Web2\TPE\TPE-Web2\templates\productos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc5356028d4f1_45013631',
+  'unifunc' => 'content_5fc7cc226dbb98_71005208',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0224cc5c7afb2243a58707e0e09f402ddedd7660' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TPE\\TPE-Web2\\templates\\productos.tpl',
-      1 => 1606759088,
+      1 => 1606929434,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc5356028d4f1_45013631 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc7cc226dbb98_71005208 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\Web2\\TPE\\TPE-Web2\\libs\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -127,8 +127,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </table>
 
 <?php if ($_smarty_tpl->tpl_vars['user']->value && $_smarty_tpl->tpl_vars['user']->value->admin == 1) {?>
-    <?php $_smarty_tpl->_subTemplateRender("file:formAddProducto.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}?>
+    <div class="container mt-3">
+        <h3 class="text-center border border-info">Agregar Producto</h3>
+        <?php $_smarty_tpl->_subTemplateRender("file:formAddProducto.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+    </div>
+<?php }?>
 
 <?php echo '<script'; ?>
  src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>

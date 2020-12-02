@@ -40,7 +40,7 @@
 
 {if $user&&$user->admin==1}
   <div class="container mt-3">
-    <h3 class="text-center border border-info">Agregar Producto</h3>
+    <h3 class="text-center border border-info">Editar Producto</h3>
     {include file="formEditProducto.tpl"}
   </div>
 {/if}

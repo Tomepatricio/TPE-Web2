@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-30 22:56:11
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 18:17:27
   from 'C:\xampp\htdocs\Web2\TPE\TPE-Web2\templates\descripcionProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc56a7be72738_05929654',
+  'unifunc' => 'content_5fc7cc270e7229_29016024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '256270254f5f679cd129371ee3631a8d788ecafc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TPE\\TPE-Web2\\templates\\descripcionProducto.tpl',
-      1 => 1606773369,
+      1 => 1606929373,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc56a7be72738_05929654 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc7cc270e7229_29016024 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -76,7 +76,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
 <?php if ($_smarty_tpl->tpl_vars['user']->value && $_smarty_tpl->tpl_vars['user']->value->admin == 1) {?>
   <div class="container mt-3">
-    <h3 class="text-center border border-info">Agregar Producto</h3>
+    <h3 class="text-center border border-info">Editar Producto</h3>
     <?php $_smarty_tpl->_subTemplateRender("file:formEditProducto.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
   </div>
