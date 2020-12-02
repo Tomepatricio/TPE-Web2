@@ -28,17 +28,12 @@
     $r->addRoute("marcaseditar/:id", "GET", "ComandController", "editarMarca");
     $r->addRoute("marcasborrar/:id", "GET", "ComandController", "borrarMarca");
     $r->addRoute("marcaseditar", "POST", "ComandController", "editarYGuardarMarcas");
-    
+ 
     $r->addRoute("login", "POST", "UserController", "loginUser");
     $r->addRoute("logout", "GET", "UserController", "logout");
     $r->addRoute("registro/addUser","POST", "UserController", "insertarUser");
-<<<<<<< HEAD
-    $r->addRoute("registroUpdate","POST", "UserController", "updateUser");
-=======
     $r->addRoute("update/:username","GET", "UserController", "updateUser");
     $r->addRoute("registroEliminar/:username","GET", "UserController", "deleteUser");
->>>>>>> develop
-
     
     //Ruta por defecto.
     $r->setDefaultRoute("showController", "goHome");
