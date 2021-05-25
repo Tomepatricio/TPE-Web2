@@ -40,18 +40,15 @@
                     <div class="col">
                         <div class="row">
                             <h3 class="text-white">{$user->username}</h3>
-<<<<<<< HEAD
                             <div class="m-2">
                                 <a href="logout"><small>Logout</small></a>
                                 <a class="text-white text-center ml-2" href="registro"><span class="badge badge-warning">Administrar Usuarios</span></a>
-=======
                             <input id="admin" type="hidden" value="{$user->admin}">
                             <div class="m-2">
                                 <a href="logout"><small>Logout</small></a>
                                 {if $user->admin==1}
                                     <a class="text-white text-center ml-2" href="registro"><span class="badge badge-warning">Administrar Usuarios</span></a>
                                 {/if}
->>>>>>> develop
                             </div>
                         </div>
                     </div>
